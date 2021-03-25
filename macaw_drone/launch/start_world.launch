@@ -1,5 +1,5 @@
 <launch>
-    <arg name="world_name" default="$(find drone_construct)/worlds/ardrone_igniteworld.world"/>
+    <arg name="world_name" default="$(find macaw_drone)/worlds/ardrone_igniteworld.world"/>
     <arg name="put_drone_in_world" default="false"/>
     <arg name="put_drone_in_world_package" default=""/>
     <arg name="put_drone_in_world_launch" default=""/>

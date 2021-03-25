@@ -9,4 +9,4 @@ export GAZEBO_RESOURCE_PATH=$pack_path:/usr/share/gazebo-3.0:/usr/share/gazebo-4
 export GAZEBO_PLUGIN_PATH=$pack_path/plugins:$GAZEBO_PLUGIN_PATH
 
 #call the client of Gazebo
-roslaunch drone_construct main.launch gui:=true paused:=false
+roslaunch macaw_drone main.launch gui:=true paused:=false
