@@ -10,3 +10,7 @@ export GAZEBO_PLUGIN_PATH=$pack_path/plugins:$GAZEBO_PLUGIN_PATH
 
 #call the client of Gazebo
 roslaunch macaw_drone main.launch gui:=true paused:=false
+
+sleep 2
+
+rostopic pub /drone/takeoff std_msgs/Empty "{}"

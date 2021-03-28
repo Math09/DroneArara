@@ -4,8 +4,9 @@
 #include <QDialog>
 #include "drone_object_ros.h"
 
-namespace Ui {
-class DialogKeyboard;
+namespace Ui 
+{
+    class DialogKeyboard;
 }
 
 class DialogKeyboard : public QDialog
