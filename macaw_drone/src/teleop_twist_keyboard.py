@@ -35,11 +35,11 @@ CTRL-C to quit
 """
 
 moveBindings = {
-		'i':(1,0,0,0),
-		'o':(1,0,0,-1),
+		'i':(1,0,0,0), # anda para frente
+		'o':(1,0,0,-1), # gira o drone para a direita
 		'j':(0,0,0,1),
 		'l':(0,0,0,-1),
-		'u':(1,0,0,1),
+		'u':(1,0,0,1), # gira o drone para a esquerda
 		',':(-1,0,0,0),
 		'.':(-1,0,0,1),
 		'm':(-1,0,0,-1),
