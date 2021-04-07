@@ -5,47 +5,48 @@ import time
 from std_msgs.msg import String
 from std_msgs.msg import Empty
 
-def takeoff_message():
-    return "subindo drone"
+import sys, select, termios, tty
 
-def main():
-    # pub_takeoff = rospy.Publisher( '/drone/takeoff', Empty, queue_size=10 )
-    # mov_msg = Empty()
-    # publisher = rospy.Publisher( '/drone/land', Empty, queue_size=10 )
-    # pub_land = Empty()
-    pub = rospy.Publisher( '/writing', String, queue_size=10 )
-    
-    pub_a = 'A'
-    pub_b = 'B'
-    pub_c = 'C'
-    pub_d = 'D'
-    pub_l = 'L'
+msg = """
++--------------------------------+
+|        Teclas para mover       |
+|                w               |
+|        a       s       d       |
+|        ------------------      |
+|        l: alçar voo            |
+|        g: descer drone         |
++--------------------------------+
+"""
 
-    rospy.init_node( 'publisher', anonymous=True )
+move = [
 
-    # i = 0
-    while not rospy.is_shutdown():
-    #     while not i == 3:
-    #         pub_takeoff.publish( mov_msg )
-    #         rospy.loginfo( 'Taking off...' )
-    #         time.sleep( 1 )
-    #         i += 1
-        
-        pub.publish( pub_l )
-        rospy.loginfo( "Takeoff drone.." )
-        time.sleep( 1 )
+    'w',
+    'd',
+    's',
+    'a',
+    'l',
+    'g'
 
-        pub.publish( pub_a )
-        rospy.loginfo( "Landing drone.." )
-        time.sleep( 1 )
+]
 
-        pub.publish( pub_b )
-        rospy.loginfo( "Move Forward.." )
-        time.sleep( 3 )
-    
-        # publisher.publish( pub_land )
-        # rospy.loginfo( "Moving drone.." )
-        # rospy.Rate( 15 )
+def getKey():
+    tty.setraw( sys.stdin.fileno() )
+    select.select( [sys.stdin], [], [], 0 )
+    key = sys.stdin.read( 1 )
+    termios.tcsetattr( sys.stdin, termios.TCSADRAIN, settings )
+
+    return key
 
 if( __name__ == '__main__' ):
-    main()
+    settings = termios.tcgetattr( sys.stdin )
+    rospy.init_node( 'publisher', anonymous=True )
+    pub = rospy.Publisher( '/writing', String, queue_size=10 )
+
+    print( msg )
+    while( 1 ):
+        key = getKey()
+        if key in move:
+            pub.publish( str( key ) )
+        else:
+            if key == '\x03':
+                break
