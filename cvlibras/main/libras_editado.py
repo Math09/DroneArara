@@ -6,9 +6,9 @@ import numpy as np
 from keras.models import load_model
 from PIL import Image 
 from keras.preprocessing import image
-
 import rospy
 from std_msgs.msg import String
+import tensorflow as tf
 
 image_x, image_y = 64,64
 
@@ -48,7 +48,7 @@ def predictor():
         return rec
     except rospy.ROSInterruptException:
         pass
-       
+
   
 cam = cv2.VideoCapture(0)
 
@@ -79,3 +79,35 @@ while True:
 
 cam.release()
 cv2.destroyAllWindows()
+
+
+class drone():
+    def __init__(move):
+
+        move.session = tf.compact.v1.keras.backend.get_session()
+
+        self.model == tf.keras.Sequential()
+
+    def predict(move, x):
+        
+        with self.session.graph.as_default():
+            tf.compact.v1.keras.backend.set_session(move.session)
+            out = move.model.predict(x)
+            return out
+
+class roslibras():
+    def __init__(move):
+        move.wrapped_model = drone()
+
+
+def main():
+            rospy.init_node("ros_tensoflow")
+            ri = roslibras()
+            rate = rospy.Rate(1)
+            while not rospy.is_shutdown():
+                rate.sleep()
+
+if __name__ == '__main__':
+      main()
+  
+       
