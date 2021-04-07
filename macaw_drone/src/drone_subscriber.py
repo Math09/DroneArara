@@ -48,21 +48,6 @@ def land_drone():
         time.sleep( 1 )
         i += 1
 
-def move_forward_drone( moveBindings ):
-    global message_move
-
-    publish_cmd_vel = rospy.Publisher( '/drone/cmd_vel', Twist, queue_size=1 )
-
-    x = moveBindings[0]
-    y = moveBindings[1]
-    z = moveBindings[2]
-    th = moveBindings[3]
-
-    message_move.linear.x = x * speed; message_move.linear.y = y * speed; message_move.linear.z = z * speed;
-    message_move.angular.x = 0; message_move.angular.y = 0; message_move.angular.z = th * turn
-    print('teste')
-    publish_cmd_vel.publish( message_move )
-
 def callback_drone( message ):
     global letter_move
 
