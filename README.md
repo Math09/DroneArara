@@ -8,7 +8,7 @@
 
 > "O Projeto Drone Arara foi desenvolvido com o intuito de resolver a problemática relacionada às emboscadas contra policiais, em razão de uma infraestrutura desordenada e precária das ruas, casas e vielas em comunidades carentes, visto que, os agentes da lei correm risco de serem encurralados por criminosos. Utilizando reconhecimento de gestos com a finalidade de distinguir sinais específicos das mãos, em que os policiais usam, o drone executa movimentos ou sobrevoa os com a intenção de mapear e acabar com pontos cegos ao seu redor."
  
-*Este texto foi removido do resumo do artigo ciêntifico escrito para o projeto:*
+*Este texto foi retirado do resumo do artigo ciêntifico escrito para o projeto:*
  - [**Download:** Artigo Drone Arara](/files/ARTIGO_DRONE_ARARA.pdf)
  - [Apresentação](/files/apresentação_ros.pptx)
 
