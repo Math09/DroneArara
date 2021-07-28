@@ -12,7 +12,7 @@ https://user-images.githubusercontent.com/31006189/127247116-d78aeb45-a08a-4e59-
  
 *Este texto foi retirado do resumo do artigo ciêntifico escrito para o projeto:*
  - [**Download:** Artigo Drone Arara](/files/ARTIGO_DRONE_ARARA.pdf)
- - [Apresentação](/files/apresentação_ros.pptx)
+ - [Apresentação.pptx](/files/apresentação_ros.pptx)
 
 A versão 1.0 do Drone Arara em dois projetos foi criada com base nos repositórios/ artigos/ vídeo:
 
