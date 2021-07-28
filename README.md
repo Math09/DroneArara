@@ -1,8 +1,10 @@
 # **(v1.0)** Drone Arara - Versão para Apresentação de Projeto de Bloco: Sistemas Robóticos
 
-<video align="center">
-    <source src="/files/SJTU_apresentacao.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/31006189/127247116-d78aeb45-a08a-4e59-852c-0dee62027f4f.mp4
+
+##### Download do vídeo
+ - [Vídeo de Apresentação](https://github.com/matheus-srego/DroneArara/blob/robotic-presentation/files/SJTU_apresentacao.mp4?raw=true)
+
 
 ## Objetivo do projeto
 
